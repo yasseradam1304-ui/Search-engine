@@ -1,4 +1,4 @@
-import sys
+import sys                              # Imports
 import requests
 from PyQt5 import QtWidgets, uic, QtCore
 
