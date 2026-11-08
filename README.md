@@ -29,6 +29,19 @@ python -m pip install -r requirements.txt
 python "Python code.py"
 ```
 
+### Créer l’application Windows (.exe)
+
+Installez PyInstaller, puis lancez le script de génération depuis PowerShell :
+
+```powershell
+python -m pip install pyinstaller
+.\build_exe.ps1
+```
+
+Le fichier autonome est créé dans `dist\Adogle.exe`. Il inclut Python, les
+dépendances et l’interface de l’application ; Python n’est pas requis sur le
+PC qui l’exécute. Le premier démarrage peut prendre quelques secondes.
+
 Les recherches Web sont transmises au moteur sélectionné. Les images sont
 recherchées sur Wikimedia Commons. L’historique et les préférences sont stockés
 localement avec QSettings. Certains moteurs peuvent modifier leur page ou
