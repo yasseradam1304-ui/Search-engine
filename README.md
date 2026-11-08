@@ -1,80 +1,55 @@
-# ***Search-engine***
+# Adogle
 
-###### **# 🔎 Mini Search Engine (PyQt5)**
+Adogle recherche sur le Web depuis la barre centrale ou la barre d’adresse. Les
+résultats sont présentés dans l’application ; les pages Web s’ouvrent dans le
+navigateur intégré.
 
-###### 
+## Fonctions
 
-###### **A mini search engine built with \*\*Python\*\*, \*\*PyQt5\*\*, and \*\*Qt Designer\*\*.**  
+- **Moteurs :** Google, Brave, DuckDuckGo, Bing, Ecosia, Qwant, Yahoo et
+  Startpage.
+- **Images :** recherche dans Wikimedia Commons. Les cartes indiquent le
+  créateur et la licence lorsque ces informations sont disponibles.
+- **Historique :** recherches récentes conservées localement sur l’appareil.
+- **Langue :** filtre de langue et de région transmis au moteur choisi.
+- **Thèmes :** contraste élevé, sombre et clair.
+- **Assistant IA :** résumé et questions sur les résultats avec Ollama sur votre
+  ordinateur. Adogle n’envoie pas ces requêtes IA à un fournisseur distant.
 
-###### **It allows users to search the web using an API and display results in a modern interface.**
+Firefox et Opera sont des navigateurs, pas des moteurs de recherche distincts.
+Adogle propose donc des moteurs réels plutôt que des options en double qui
+renverraient aux mêmes résultats.
 
-###### 
+## Installation et lancement
 
-###### **---**
+Python 3.10+ :
 
-###### 
+```powershell
+python -m pip install -r requirements.txt
+python "Python code.py"
+```
 
-###### **## 🚀 Features**
+Les recherches Web sont transmises au moteur sélectionné. Les images sont
+recherchées sur Wikimedia Commons. L’historique et les préférences sont stockés
+localement avec QSettings. Certains moteurs peuvent modifier leur page ou
+présenter un CAPTCHA ; Adogle réessaie l’extraction puis permet de relancer la
+recherche ou de choisir un autre moteur.
 
-###### 
+### Assistant IA local
 
-###### **- 🔎 Search using an API (Tavily)**
+Installez Ollama, puis téléchargez un modèle :
 
-###### **- 📜 Multiple results with scroll**
+```powershell
+ollama pull qwen2.5:3b
+```
 
-###### **- 🔗 Clickable links**
+Lancez Ollama et vérifiez le modèle dans **Paramètres → Détecter mes modèles**.
+L’IA utilise l’API locale `http://127.0.0.1:11434` et fonde ses réponses sur les
+extraits de la recherche. Sans Ollama, les autres fonctions de recherche
+continuent de fonctionner.
 
-###### **- 🌙 Dark mode**
+## Tests
 
-###### **- ⚡ Auto suggestions**
-
-###### **- 💫 Dynamic UI (animations + hover effects)**
-
-###### 
-
-###### **---**
-
-###### 
-
-###### **## 🖥️ Interface**
-
-###### 
-
-###### **- Home page with a search bar**  
-
-###### **- Results page with dynamic content display**  
-
-###### 
-
-###### **---**
-
-###### 
-
-###### **## 🛠️ Technologies Used**
-
-###### 
-
-###### **- Python 🐍**
-
-###### **- PyQt5**
-
-###### **- Qt Designer**
-
-###### **- Tavily API**
-
-###### 
-
-###### **---**
-
-###### 
-
-###### **## 📦 Installation**
-
-###### 
-
-###### **```bash**
-
-###### **pip install PyQt5 requests**
-
-
-
+```powershell
+python -m unittest discover -v
+```
