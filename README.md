@@ -1,65 +1,65 @@
 # Adogle
 
-Adogle recherche sur le Web depuis la barre centrale ou la barre d’adresse. Les
-résultats sont présentés dans l’application ; les pages Web s’ouvrent dans le
-navigateur intégré.
+Adogle lets you search the web from the central search bar or the address bar.
+Results appear in the app, and web pages open in the built-in browser.
 
-## Fonctions
+## Features
 
-- **Moteurs :** Google, Brave, DuckDuckGo, Bing, Ecosia, Qwant, Yahoo et
-  Startpage.
-- **Images :** recherche dans Wikimedia Commons. Les cartes indiquent le
-  créateur et la licence lorsque ces informations sont disponibles.
-- **Historique :** recherches récentes conservées localement sur l’appareil.
-- **Langue :** filtre de langue et de région transmis au moteur choisi.
-- **Thèmes :** contraste élevé, sombre et clair.
-- **Assistant IA :** résumé et questions sur les résultats avec Ollama sur votre
-  ordinateur. Adogle n’envoie pas ces requêtes IA à un fournisseur distant.
+- **Search engines:** Google, Brave, DuckDuckGo, Bing, Ecosia, Qwant, Yahoo,
+  and Startpage.
+- **Images:** Search Wikimedia Commons. Cards show the creator and license
+  when that information is available.
+- **History:** Recent searches are stored locally on your device.
+- **Language:** A language and region filter is sent to the selected search
+  engine.
+- **Themes:** High contrast, dark, and light.
+- **AI assistant:** Summarize and ask questions about search results using
+  Ollama on your computer. Adogle does not send AI requests to a remote
+  provider.
 
-Firefox et Opera sont des navigateurs, pas des moteurs de recherche distincts.
-Adogle propose donc des moteurs réels plutôt que des options en double qui
-renverraient aux mêmes résultats.
+Firefox and Opera are browsers, not separate search engines. Adogle therefore
+offers actual search engines rather than duplicate options that would return
+the same results.
 
-## Installation et lancement
+## Installation and launch
 
-Python 3.10+ :
+Python 3.10+:
 
 ```powershell
 python -m pip install -r requirements.txt
 python "Python code.py"
 ```
 
-### Créer l’application Windows (.exe)
+### Build the Windows app (.exe)
 
-Installez PyInstaller, puis lancez le script de génération depuis PowerShell :
+Install PyInstaller, then run the build script from PowerShell:
 
 ```powershell
 python -m pip install pyinstaller
 .\build_exe.ps1
 ```
 
-Le fichier autonome est créé dans `dist\Adogle.exe`. Il inclut Python, les
-dépendances et l’interface de l’application ; Python n’est pas requis sur le
-PC qui l’exécute. Le premier démarrage peut prendre quelques secondes.
+The standalone executable is created at `dist\Adogle.exe`. It bundles Python,
+the dependencies, and the app interface; Python is not required on the
+computer running it. The first launch may take a few seconds.
 
-Les recherches Web sont transmises au moteur sélectionné. Les images sont
-recherchées sur Wikimedia Commons. L’historique et les préférences sont stockés
-localement avec QSettings. Certains moteurs peuvent modifier leur page ou
-présenter un CAPTCHA ; Adogle réessaie l’extraction puis permet de relancer la
-recherche ou de choisir un autre moteur.
+Web searches are sent to the selected search engine. Images are searched on
+Wikimedia Commons. Search history and preferences are stored locally using
+QSettings. Some search engines may change their pages or show a CAPTCHA;
+Adogle retries extraction and lets you retry the search or choose another
+engine.
 
-### Assistant IA local
+### Local AI assistant
 
-Installez Ollama, puis téléchargez un modèle :
+Install Ollama, then download a model:
 
 ```powershell
 ollama pull qwen2.5:3b
 ```
 
-Lancez Ollama et vérifiez le modèle dans **Paramètres → Détecter mes modèles**.
-L’IA utilise l’API locale `http://127.0.0.1:11434` et fonde ses réponses sur les
-extraits de la recherche. Sans Ollama, les autres fonctions de recherche
-continuent de fonctionner.
+Start Ollama and check for the model under **Settings → Detect my models**.
+The AI uses the local API at `http://127.0.0.1:11434` and bases its answers on
+search snippets. Without Ollama, the other search features continue to work.
 
 ## Tests
 
